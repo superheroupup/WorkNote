@@ -1,6 +1,6 @@
 ### robotiq
 
-####install 
+#### install 
 ```
 https://blog.csdn.net/sinat_37011812/article/details/79965957
 切记usermod -a -G dialout YOURUSERNAM
