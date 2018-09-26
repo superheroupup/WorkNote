@@ -27,6 +27,11 @@ roslaunch mynt_eye_ros_wrapper mynteye.launch
     <remap from="/stereo/right/image_rect" to="/mynteye/right/image_rect" />
     <remap from="/stereo/left/camera_info"  to="/mynteye/left/camera_info" />
     <remap from="/stereo/right/camera_info"  to="/mynteye/right/camera_info" />
-3.roslaunch sptam kitti.launch
-4.rviz 添加 观看话题 path 和 pointcloud
+3.  修改sptam包中的configurationFiles/kitti.yaml文件,将EpipolarDistance的值修改为4.0
+4.roslaunch sptam kitti.launch
+5.rviz 添加 观看话题 path 和 pointcloud
+  5.1 Fixed Frame as map    
+  5.2 Add -> By Topic -> PointCloud
+  5.3 Add -> By Topic -> Path   
 ```
+ **注 ：如果S-PTAM仍然丢失，请尝试更改一些配置参数。例如，可以将稍微增加kitti.yaml文件中的MatchingNeighborhood和/或MatchingDistance。还可尝试增加FrustumFarPlaneDist。最后，可以尝试使关键帧创建策略更加灵活，从而减少minimumTrackedPointsRatio值**
