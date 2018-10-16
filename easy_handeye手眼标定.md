@@ -1,4 +1,4 @@
-###October 11, 2018 3:05 PM
+### October 11, 2018 3:05 PM
 
 #### 1.rviz中无法正确的选择kinect的坐标系
 ```
@@ -6,7 +6,7 @@ roslaunch kinect2_bridge kinect2_bridge.launch publish_tf:=true
 ```
 **启动的时候发布tf**
 
-###October 16, 2018 10:11 AM
+### October 16, 2018 10:11 AM
 ####手眼标定
 ArUco marker生成器
 1.启动ur机器人时要把参数llimited去掉
