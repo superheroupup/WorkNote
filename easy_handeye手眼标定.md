@@ -1,4 +1,4 @@
-### October 11, 2018 3:05 PM
+###October 11, 2018 3:05 PM
 
 #### 1.rviz中无法正确的选择kinect的坐标系
 ```
@@ -6,7 +6,7 @@ roslaunch kinect2_bridge kinect2_bridge.launch publish_tf:=true
 ```
 **启动的时候发布tf**
 
-### October 16, 2018 10:11 AM
+###October 16, 2018 10:11 AM
 ####手眼标定
 ArUco marker生成器
 1.启动ur机器人时要把参数llimited去掉
@@ -68,4 +68,18 @@ sensors:
 4.启动
 ```
   roslaunch easy_handeye mypublish.launch
+```
+
+### October 17, 2018 6:08 PM
+#### ros kinect2 ork linemod
+```
+roslaunch kinect2_bridge kinect2_bridge.launch
+rosrun topic_tools relay /kinect2/qhd/image_depth_rect /camera/depth_registered/image_raw
+rosrun topic_tools relay /kinect2/qhd/image_color_rect /camera/rgb/image_rect_color
+rosrun topic_tools relay /kinect2/qhd/camera_info /camera/rgb/camera_info
+rosrun topic_tools relay /kinect2/qhd/camera_info /camera/depth_registered/camera_info
+rosrun topic_tools relay /kinect2/qhd/points /camera/depth_registered/points
+rosrun tf static_transform_publisher 0 0 0 0 0 0 kinect2_ir_opticalrame camera_depth_optical_frame 40
+--rosrun object_recognition_core detection -c  `rospack find object_recognition_linemod`/conf/detection.ros.ork (成功)
+--rosrun object_recognition_core detection -c  `rospack find object_recognition_tabletop`/conf/detection.object.ros.ork (未成功
 ```
