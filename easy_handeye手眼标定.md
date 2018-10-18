@@ -1,4 +1,8 @@
-###October 11, 2018 3:05 PM
+### October 10, 2018 11:05 AM
+安装kinect2驱动并且添加了点击获取坐标信息的功能
+参照:https://blog.csdn.net/sunbibei/article/details/51594824
+
+### October 11, 2018 3:05 PM
 
 #### 1.rviz中无法正确的选择kinect的坐标系
 ```
@@ -73,6 +77,7 @@ sensors:
 ### October 17, 2018 6:08 PM
 #### ros kinect2 ork linemod
 ```
+--1.0--
 roslaunch kinect2_bridge kinect2_bridge.launch
 rosrun topic_tools relay /kinect2/qhd/image_depth_rect /camera/depth_registered/image_raw
 rosrun topic_tools relay /kinect2/qhd/image_color_rect /camera/rgb/image_rect_color
@@ -81,5 +86,11 @@ rosrun topic_tools relay /kinect2/qhd/camera_info /camera/depth_registered/camer
 rosrun topic_tools relay /kinect2/qhd/points /camera/depth_registered/points
 rosrun tf static_transform_publisher 0 0 0 0 0 0 kinect2_ir_opticalrame camera_depth_optical_frame 40
 --rosrun object_recognition_core detection -c  `rospack find object_recognition_linemod`/conf/detection.ros.ork (成功)
---rosrun object_recognition_core detection -c  `rospack find object_recognition_tabletop`/conf/detection.object.ros.ork (未成功
+--rosrun object_recognition_core detection -c  `rospack find object_recognition_tabletop`/conf/detection.object.ros.ork (未成功)
+
+--2.0--
+1.roslaunch kinect2_bridge kinect2_bridge.launch
+2.roslaunch kinect2_bridge kinect2_modifytopic.launch
+3.rosrun object_recognition_core detection -c  `rospack find object_recognition_linemod`/conf/detection.ros.ork (成功)
+  或rosrun object_recognition_core detection -c  `rospack find object_recognition_tabletop`/conf/detection.object.ros.ork (未成功)
 ```
