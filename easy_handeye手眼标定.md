@@ -1,5 +1,5 @@
 ### October 10, 2018 11:05 AM
-安装kinect2驱动并且添加了点击获取坐标信息的功能
+安装kinect2驱动并且添加了点击获取坐标信息的功能</br>
 参照:https://blog.csdn.net/sunbibei/article/details/51594824
 
 ### October 11, 2018 3:05 PM
