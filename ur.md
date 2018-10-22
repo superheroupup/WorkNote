@@ -66,7 +66,7 @@
 ```
 
 ### October 22, 2018 2:59 PM
-配置IKFast
+#### 配置IKFast
 1.export BASE_LINK="2“  export EEF_LINK="10"</br>
 2.将ur5_robotiq_parallel_ikfast_manipulator_plugin包放到ur文件夹下</br>
 3.修改ur5_robotiq_parallel_ikfast_manipulator_plugin包的package.xml --> 将run_depend 改为exec_depend</br>
