@@ -67,10 +67,10 @@
 
 ### October 22, 2018 2:59 PM
 配置IKFast
-1.export BASE_LINK="2“  export EEF_LINK="10"
-2.将ur5_robotiq_parallel_ikfast_manipulator_plugin包放到ur文件夹下
-3.修改ur5_robotiq_parallel_ikfast_manipulator_plugin包的package.xml --> 将run_depend 改为exec_depend
-4.修改ur5_robotiq_parallel_ikfast_manipulator_plugin包的CMakeList.txt -> 添加add_compile_options(-std=c++11)
+1.export BASE_LINK="2“  export EEF_LINK="10"</br>
+2.将ur5_robotiq_parallel_ikfast_manipulator_plugin包放到ur文件夹下</br>
+3.修改ur5_robotiq_parallel_ikfast_manipulator_plugin包的package.xml --> 将run_depend 改为exec_depend</br>
+4.修改ur5_robotiq_parallel_ikfast_manipulator_plugin包的CMakeList.txt -> 添加add_compile_options(-std=c++11)</br>
 
-ur5_robotiq_parallel的ikfast已配置成功，但是单独的ur没配置成功
-出错在将ur5_robot.urdf.xacro转换成ur5_robot.urdf 尚未解决
+ur5_robotiq_parallel的ikfast已配置成功，但是单独的ur没配置成功</br>
+出错在将ur5_robot.urdf.xacro转换成ur5_robot.urdf 尚未解决</br>
