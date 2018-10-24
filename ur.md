@@ -66,15 +66,16 @@
 ```
 
 ### October 22, 2018 2:59 PM
-配置IKFast
+### 配置IKFast
+```
 1.export BASE_LINK="2“  export EEF_LINK="10"
 2.将ur5_robotiq_parallel_ikfast_manipulator_plugin包放到ur文件夹下
 3.修改ur5_robotiq_parallel_ikfast_manipulator_plugin包的package.xml --> 将run_depend 改为exec_depend
 4.修改ur5_robotiq_parallel_ikfast_manipulator_plugin包的CMakeList.txt -> 添加add_compile_options(-std=c++11)
+```
+过程：https://blog.csdn.net/Kalenee/article/details/80740258</br>
+修改的地方：rosrun moveit_kinematics round_collada_numbers.py "$MYROBOT_NAME".dae "$MYROBOT_NAME".dae "$IKFAST_PRECISION"换成</br>
+			rosrun moveit_ikfast round_collada_numbers.py "$MYROBOT_NAME".dae "$MYROBOT_NAME".dae "$IKFAST_PRECISION"</br>
 
-过程：https://blog.csdn.net/Kalenee/article/details/80740258
-修改的地方：rosrun moveit_kinematics round_collada_numbers.py "$MYROBOT_NAME".dae "$MYROBOT_NAME".dae "$IKFAST_PRECISION"换成
-			rosrun moveit_ikfast round_collada_numbers.py "$MYROBOT_NAME".dae "$MYROBOT_NAME".dae "$IKFAST_PRECISION"
-
-ur5_robotiq_parallel的ikfast已配置成功，但是运行起来关节好像受到了限制，单独的ur没配置成功
+ur5_robotiq_parallel的ikfast已配置成功，但是运行起来关节好像受到了限制，单独的ur没配置成功</br>
 出错在将ur5_robot.urdf.xacro转换成ur5_robot.urdf 尚未解决
